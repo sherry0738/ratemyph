@@ -1,0 +1,51 @@
+<!-- <h2>login</h2>
+
+<form action="/session" method="post">
+	<label for="">email</label>
+	<input type="text" name="email">
+	<label for="">password</label>
+	<input type="password" name="password">
+
+	<button>login</button>
+</form> -->
+<P>
+	<% if session[:user_id] == nil %>
+	<% else %>
+	<% end %>
+</P>
+
+<p>
+	<% if session[:user_id] == nil %>
+			<button onclick="deletewarning()">Delete</button>			
+			<script> function deletewarning() {
+	    						alert("Please log in.");
+							}</script>
+	<% else %> 
+</p>
+
+
+<div class="container">
+	<div class="signup_page_main">
+
+	</div>
+</div>
+
+
+
+
+
+<% if session[:user_id] == nil %>
+<% else %>
+<% end %>
+
+<P></P>
+	comment.created_by = params[:id]
+dui  comment.created_by = session[:user_id]
+
+<%= comment.created_by.name  %>
+<%= session[:user_id].name  %> 
+<%= User.find(session[:user_id]).name %> 
+
+photographer.id.to_s
+
+

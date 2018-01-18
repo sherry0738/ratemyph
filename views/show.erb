@@ -1,0 +1,41 @@
+<div>
+	<h2><%= @photographer.name %></h2>
+	<img src="<%= @photographer.image_url %>" alt="">
+	<p>Rating: <%= @photographer.rate %></p>
+	<p>Telphone: <%= @photographer.phone %></p>
+	<p>Location: <%= @photographer.address %></p>
+	<p>website: <%= @photographer.website %></p>	 	
+</div>
+
+<% if session[:user_id] %>
+	<form action="/photographers/<%= @photographer.id %>" method="post">
+		<input type="hidden" name="_method" value="delete">
+		<button>Delete</button>	
+	</form>
+	<a href="/photographers/<%= @photographer.id %>/edit">Edit</a>
+
+	<p>Rate this photographer</p>
+	<form action="/rate">
+		<input type="text" name="rate_number" placeholder="Find the perfect stock Photographers...">
+		<button type="submit">Submit</button>	
+	</form>
+
+	<p>Add comments</p>
+		<form action="/comments" method="post">
+			<input type="hidden" name="photographer_id" value="<%= @photographer.id %>">  
+			<textarea name="content" id="" cols="30" rows="10"></textarea>
+			<button>Save (don't forget to make rate function)</button>
+		</form>		
+<% end %>
+
+<p>Comments :</p>
+<% @comments.each do |comment| %>
+	<hr>
+	<div>
+		<p><%= comment.content %></p>
+		<p>comments by <%= User.find(comment.created_by).name  %>  at  <%= comment.created_at %></p>
+	</div>
+<% end %>
+
+
+

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+</head>
+<body>
+	<header>
+		<h1>Rate My Photographer</h1>
+
+		<div class="nav">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>		
+			</ul>			
+		</div>
+
+
+		<form action="/search">
+			<input type="text" name="photographer_name" placeholder="Find the perfect stock Photographers...">
+			<button type="submit">search</button>	
+		</form>
+
+		<% if session[:user_id] %>
+		logged in as <%= User.find(session[:user_id]).email %>
+		
+			<div class="logout">				
+				<form action="/session" method="post">
+				<input type="hidden" name="_method" value="delete">
+				<button>logout</button>	
+				</form>
+			</div>
+		<% end %>
+
+	</header>
+
+	<main>
+		
+ 	 <%= yield %>
+	</main>
+
+	<footer class="clearfix">
+    <p class="copyright">Copyright 2018</p>
+    <p class="message">Created with &hearts; by <span class="name">Sherry</span></p>
+  	</footer>
+</body>
+</html>
