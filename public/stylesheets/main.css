@@ -1,0 +1,58 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: lightblue;
+}
+
+header {
+	background-color: yellow;
+}
+
+.container {
+	background-color: #ffc0cb;
+	display: flex;
+	width: 90%;
+	/*padding-left: 30px;
+	padding-bottom: 20px;
+	padding-right: 30px;*/
+	
+	margin-right: 60px;
+	margin-left: 60px;
+	margin-bottom: 20px;
+}
+.login {
+	padding: 3px 30px 30px 30
+}
+.signup_page_main {
+
+}
+
+footer {
+	display: ruby-base-container;
+	justify-content:space-between;
+ 	text-transform: uppercase;
+ 	padding: 0 20px;
+ 	background-color: lightgray;
+ 	color: darkgray;
+ 	font-size: 18px;
+ 	letter-spacing: .08em;
+ 	font-weight: 100;
+ 	align-items: flex-end;
+}
+.copyright {
+ 	float: left;
+ 	font-family: "Raleway", sans-serif;
+}
+.message {
+ 	float: right;
+ 	font-family: "Raleway", sans-serif;
+}
+.clearfix:after {
+ 	visibility: hidden;
+ 	display: block;
+ 	content: " ";
+ 	clear: both;
+ 	height: 0;
+ 	font-size: 0;
